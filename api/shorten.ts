@@ -4,9 +4,9 @@ See the LICENSE file in the project root.
 */
 
 import type { ServerResponse } from "node:http";
-import { shortenUrl } from "./_mongo";
-import { sendJson, type ApiRequest } from "./_types";
-import { validateDestinationUrl } from "../shared/validation";
+import { shortenUrl } from "./_mongo.js";
+import { sendJson, type ApiRequest } from "./_types.js";
+import { validateDestinationUrl } from "../shared/validation.js";
 
 function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null && !Array.isArray(value);

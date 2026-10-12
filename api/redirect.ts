@@ -4,8 +4,8 @@ See the LICENSE file in the project root.
 */
 
 import type { ServerResponse } from "node:http";
-import { getUrl } from "./_mongo";
-import { sendJson, type ApiRequest } from "./_types";
+import { getUrl } from "./_mongo.js";
+import { sendJson, type ApiRequest } from "./_types.js";
 
 export default async function handler(
   request: ApiRequest,
