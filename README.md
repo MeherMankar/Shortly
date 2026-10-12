@@ -1,5 +1,7 @@
 # WebShortener
-A simple web shortener made with [oak](https://deno.land/x/oak) and [mongo](https://mongodb.com).
+A simple web shortener made with [Oak](https://deno.land/x/oak) and
+[MongoDB](https://mongodb.com), deployable as either a Deno app or Vercel
+Functions.
 
 <a href="https://www.producthunt.com/posts/webshortener?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-webshortener" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=429959&theme=dark" alt="WebShortener - A&#0032;simple&#0032;lightweight&#0032;link&#0032;shortener&#0032;using&#0032;MongoDB&#0046; | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>
 
@@ -30,6 +32,15 @@ validation tests with `deno task test` and type-check the server with
 `deno task check`.
 
 # Deployment
+
+## Vercel
+
+Import the repository into Vercel and set `MONGO_URL` in the project's
+environment variables. Vercel serves the frontend from `public/` and runs the
+Node.js API functions in `api/`. The `/shorten` and `/<hash>` routes are
+rewritten to those functions.
+
+## Deno
 
 Deploy this as a long-running Deno application on a host that supports Deno and
 MongoDB network access. Configure `MONGO_URL` and, if required by the host,

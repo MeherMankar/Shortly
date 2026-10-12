@@ -5,7 +5,7 @@ See the LICENSE file in the project root.
 
 import { Application, Router } from "https://deno.land/x/oak@v11.1.0/mod.ts";
 import { getUrl, shortenUrl } from "./database.ts";
-import { validateDestinationUrl } from "./validation.ts";
+import { validateDestinationUrl } from "../shared/validation.ts";
 
 const router = new Router();
 

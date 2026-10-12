@@ -29,10 +29,25 @@ form.addEventListener("submit", async (event) => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ url: longUrl }),
     });
-    const data = await response.json();
+    const responseText = await response.text();
+    let data;
+    try {
+      data = JSON.parse(responseText);
+    } catch {
+      throw new Error(
+        `The server returned an invalid response (HTTP ${response.status}). Please try again.`,
+      );
+    }
 
-    if (!response.ok || typeof data.hash !== "string") {
-      throw new Error(data.error || "Unable to shorten this URL.");
+    if (
+      !response.ok || !data || typeof data !== "object" ||
+      typeof data.hash !== "string"
+    ) {
+      throw new Error(
+        typeof data?.error === "string"
+          ? data.error
+          : `Unable to shorten this URL (HTTP ${response.status}).`,
+      );
     }
 
     const shortenedUrl = new URL(data.hash, `${window.location.origin}/`).href;

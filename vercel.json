@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/shorten",
+      "destination": "/api/shorten"
+    },
+    {
+      "source": "/:hash([0-9a-z]{8})",
+      "destination": "/api/redirect?hash=:hash"
+    }
+  ]
+}

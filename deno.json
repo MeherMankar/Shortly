@@ -1,7 +1,7 @@
 {
   "tasks": {
-    "start": "deno run --allow-env --allow-net --allow-read api/main.ts",
-    "test": "deno test api/validation_test.ts",
-    "check": "deno check api/main.ts"
+    "start": "deno run --allow-env --allow-net --allow-read deno/main.ts",
+    "test": "deno test tests/validation_test.ts",
+    "check": "deno check deno/main.ts"
   }
 }

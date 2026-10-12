@@ -1,4 +1,7 @@
-import { MAX_URL_LENGTH, validateDestinationUrl } from "./validation.ts";
+import {
+  MAX_URL_LENGTH,
+  validateDestinationUrl,
+} from "../shared/validation.ts";
 
 function assertEquals(actual: boolean, expected: boolean): void {
   if (actual !== expected) {
