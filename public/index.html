@@ -1,0 +1,45 @@
+<!-- 
+(c) Meher Mankar
+See the LICENSE file in the project root.
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Link Shortener</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="./styles.css">
+        <link rel="icon" href="assets/logo.svg" type="image/x-icon">
+    </head>
+    <body>
+        <div class="container">
+            <h1>Link Shortener</h1>
+            <p>Shorten your links, for free!</p>
+            <form id="shortenForm">
+                <label for="longURL">URL to shorten</label>
+                <input type="url" id="longURL" placeholder="https://example.com"
+                    maxlength="2048" required>
+                <button type="submit">Shorten</button>
+            </form>
+            <p id="formStatus" role="status" aria-live="polite"></p>
+        </div>
+
+        <!-- Custom Popup -->
+        <div id="customPopup" class="popup" role="dialog" aria-modal="true"
+            aria-labelledby="popupTitle" hidden>
+            <div class="popup-content">
+                <button id="closePopup" class="close-button" type="button"
+                    aria-label="Close dialog">&times;</button>
+                <h2 id="popupTitle">Shortened Link</h2>
+                <p id="shortenedLink"><a id="shortLink" href="#"
+                        target="_blank" rel="noopener noreferrer">Here's your shortened link</a></p>
+                <button id="copyButton" type="button">Copy to Clipboard</button>
+            </div>
+        </div>
+        <!-- Footer -->
+        <footer class="footer">
+            <p>With ❤️ by <a href="https://www.meher.tech">Meher Mankar</a>!</p>
+        </footer>
+        <script src="./script.js"></script>
+    </body>
+</html>
